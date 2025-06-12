@@ -3,7 +3,7 @@ import pickle,joblib
 import pandas as pd
 app=Flask(__name__)
 model=pickle.load(open("model.pkl","rb"))
-ct=joblib.load('/project/flask/feature_value')
+ct=joblib.load('feature_value')
  
 
 @app.route('/')
