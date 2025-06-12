@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 import pickle,joblib
 import pandas as pd
+import os
 app=Flask(__name__)
 model=pickle.load(open("model.pkl","rb"))
 ct=joblib.load('feature_value')
@@ -52,6 +53,7 @@ def output():
         return render_template("output.html",y="This person Doesn't require mental health treatment")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port=int(os.environ.get("PORT",5000))
+    app.run(host="0.0.0.0",port=port)
 
 
