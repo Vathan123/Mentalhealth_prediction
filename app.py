@@ -2,7 +2,7 @@ from flask import Flask,render_template,request
 import pickle,joblib
 import pandas as pd
 app=Flask(__name__)
-model=pickle.load(open("/model.pkl","rb"))
+model=pickle.load(open("model.pkl","rb"))
 ct=joblib.load('/project/flask/feature_value')
  
 
